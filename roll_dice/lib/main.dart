@@ -7,7 +7,10 @@ void main() {
     const MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.amberAccent,
-        body: MyCustomWidget(),
+        body: MyCustomWidget(
+          Color.fromARGB(255, 25, 245, 34),
+          Color.fromARGB(255, 53, 42, 120),
+        ),
       ),
     ),
   );

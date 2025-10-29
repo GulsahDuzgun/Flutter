@@ -13,17 +13,17 @@ const endAlignment = Alignment.bottomRight;
 
 class MyCustomWidget extends StatelessWidget {
   //super keywords call constructor of parent class
-  const MyCustomWidget({super.key});
+  // const MyCustomWidget({super.key});
+  const MyCustomWidget(this.color_1, this.color_2, {super.key});
+
+  final Color color_1, color_2;
 
   @override
   Widget build(context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 25, 245, 34),
-            Color.fromARGB(255, 53, 42, 120),
-          ],
+          colors: [color_1, color_2],
           begin: startAlignment,
           end: endAlignment,
         ),
