@@ -33,9 +33,18 @@ class MyCustomWidget extends StatelessWidget {
       // child: Center(child: StyledText.textHi("sendedText")),
       child: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset("assets/images/dice-1.png", width: 200),
-            TextButton(onPressed: onRollDice, child: Text("Roll Dice")),
+            const SizedBox(height: 20),
+            TextButton(
+              onPressed: onRollDice,
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+                // padding: EdgeInsets.only(top: 20),
+              ),
+              child: const Text("Roll Dice", style: TextStyle(fontSize: 20)),
+            ),
           ],
         ),
       ),
