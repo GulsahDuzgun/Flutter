@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:roll_dice/styled_text.dart';
 
+var startAlignment = Alignment.topLeft;
+var endAlignment = Alignment.bottomRight;
+
 class MyCustomWidget extends StatelessWidget {
   //super keywords call constructor of parent class
   const MyCustomWidget({super.key});
@@ -9,14 +12,14 @@ class MyCustomWidget extends StatelessWidget {
   @override
   Widget build(context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
+          colors: const [
             Color.fromARGB(255, 25, 245, 34),
             Color.fromARGB(255, 53, 42, 120),
           ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: startAlignment,
+          end: endAlignment,
         ),
       ),
       child: const Center(child: StyledText()),
