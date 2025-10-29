@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'package:roll_dice/styled_text.dart';
 
-var startAlignment = Alignment.topLeft;
-var endAlignment = Alignment.bottomRight;
+//const and final types cannot be reassign, aet once and can not change.
+//The difference is  final is determined at runtime but const variables must be known at compile time
+
+const startAlignment = Alignment.topLeft;
+const endAlignment = Alignment.bottomRight;
+//var type's variables can be reassing if the initialization type is same
+//For example these variables can be reassign different Aligment values
+//const == compile time variable, final == set once runtime, var == can change
 
 class MyCustomWidget extends StatelessWidget {
   //super keywords call constructor of parent class
@@ -12,9 +18,9 @@ class MyCustomWidget extends StatelessWidget {
   @override
   Widget build(context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: const [
+          colors: [
             Color.fromARGB(255, 25, 245, 34),
             Color.fromARGB(255, 53, 42, 120),
           ],
@@ -22,7 +28,7 @@ class MyCustomWidget extends StatelessWidget {
           end: endAlignment,
         ),
       ),
-      child: const Center(child: StyledText()),
+      child: const Center(child: StyledText('Hello World!')),
     );
   }
 }

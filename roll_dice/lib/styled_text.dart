@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 class StyledText extends StatelessWidget {
-  const StyledText({super.key});
+  //named parameters can be optional like key but position properties can not be pass emty
+  const StyledText(this.text, {super.key});
+  //with this.text optinal paramater takes and assign to same class property
+  // const StyledText(String printedString, {super.key}) : text = printedString;
+  final String text; //Assign one time at runtime
 
   @override
   Widget build(context) {
     return Text(
-      'Hello World!',
-      style: TextStyle(color: Colors.white, fontSize: 28),
+      text,
+      style: const TextStyle(color: Colors.white, fontSize: 28),
     );
   }
 }
