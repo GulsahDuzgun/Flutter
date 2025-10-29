@@ -5,6 +5,8 @@ class StyledText extends StatelessWidget {
   const StyledText(this.text, {super.key});
   //with this.text optinal paramater takes and assign to same class property
   // const StyledText(String printedString, {super.key}) : text = printedString;
+  const StyledText.textHi(String sendedText, {super.key}) : text = "Hi There";
+
   final String text; //Assign one time at runtime
 
   @override
