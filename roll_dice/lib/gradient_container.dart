@@ -18,6 +18,8 @@ class MyCustomWidget extends StatelessWidget {
 
   final Color color_1, color_2;
 
+  void onRollDice() {}
+
   @override
   Widget build(context) {
     return Container(
@@ -29,7 +31,14 @@ class MyCustomWidget extends StatelessWidget {
         ),
       ),
       // child: Center(child: StyledText.textHi("sendedText")),
-      child: Center(child: Image.asset("assets/images/dice-1.png", width: 200)),
+      child: Center(
+        child: Column(
+          children: [
+            Image.asset("assets/images/dice-1.png", width: 200),
+            TextButton(onPressed: onRollDice, child: Text("Roll Dice")),
+          ],
+        ),
+      ),
     );
   }
 }
