@@ -14,11 +14,15 @@ const endAlignment = Alignment.bottomRight;
 class MyCustomWidget extends StatelessWidget {
   //super keywords call constructor of parent class
   // const MyCustomWidget({super.key});
-  const MyCustomWidget(this.color_1, this.color_2, {super.key});
+  MyCustomWidget(this.color_1, this.color_2, {super.key});
 
   final Color color_1, color_2;
+  var currentDiceImage = "assets/images/dice-1.png";
 
-  void onRollDice() {}
+  void onRollDice() {
+    currentDiceImage = "assets/images/dice-2.png";
+    print("Dice Rolled!");
+  }
 
   @override
   Widget build(context) {
@@ -35,7 +39,7 @@ class MyCustomWidget extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset("assets/images/dice-1.png", width: 200),
+            Image.asset(currentDiceImage, width: 200),
             const SizedBox(height: 20),
             TextButton(
               onPressed: onRollDice,
