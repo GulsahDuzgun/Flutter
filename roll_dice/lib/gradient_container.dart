@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roll_dice/roll_dice.dart';
 
 import 'package:roll_dice/styled_text.dart';
 
@@ -14,15 +15,9 @@ const endAlignment = Alignment.bottomRight;
 class MyCustomWidget extends StatelessWidget {
   //super keywords call constructor of parent class
   // const MyCustomWidget({super.key});
-  MyCustomWidget(this.color_1, this.color_2, {super.key});
+  const MyCustomWidget(this.color_1, this.color_2, {super.key});
 
   final Color color_1, color_2;
-  var currentDiceImage = "assets/images/dice-1.png";
-
-  void onRollDice() {
-    currentDiceImage = "assets/images/dice-2.png";
-    print("Dice Rolled!");
-  }
 
   @override
   Widget build(context) {
@@ -35,23 +30,7 @@ class MyCustomWidget extends StatelessWidget {
         ),
       ),
       // child: Center(child: StyledText.textHi("sendedText")),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(currentDiceImage, width: 200),
-            const SizedBox(height: 20),
-            TextButton(
-              onPressed: onRollDice,
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.white,
-                // padding: EdgeInsets.only(top: 20),
-              ),
-              child: const Text("Roll Dice", style: TextStyle(fontSize: 20)),
-            ),
-          ],
-        ),
-      ),
+      child: Center(child: RollDice()),
     );
   }
 }
