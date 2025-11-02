@@ -13,7 +13,19 @@ class SplashScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset("assets/images/quiz-logo.png", width: 300),
+          // Opacity(
+          //   opacity: 0.5,
+          //   child: Image.asset(
+          //     "assets/images/quiz-logo.png",
+          //     width: 300,
+          //     color: Colors.amber,
+          //   ),
+          // ),
+          Image.asset(
+            "assets/images/quiz-logo.png",
+            width: 300,
+            color: const Color.fromARGB(120, 255, 255, 255),
+          ),
           SizedBox(height: 24),
           Text(
             "Learn Flutter the fun way!",
