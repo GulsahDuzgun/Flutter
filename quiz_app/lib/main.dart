@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/splash_screen.dart';
+import 'package:quiz_app/questions_screen.dart';
+import 'package:quiz_app/quiz.dart';
 
 void main() {
+  Widget outputScreen = QuizStartScreen();
+
+  void switchScreen() {
+    outputScreen = QuestionsScreen();
+  }
+
   runApp(
     MaterialApp(
       home: Scaffold(
@@ -16,7 +23,7 @@ void main() {
               end: Alignment.bottomRight,
             ),
           ),
-          child: SplashScreen(),
+          child: outputScreen,
         ),
       ),
     ),
