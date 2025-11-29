@@ -1,20 +1,9 @@
 import 'package:flutter/material.dart';
 
-class QuizStartScreen extends StatefulWidget {
-  QuizStartScreen({super.key});
+class QuizStartScreen extends StatelessWidget {
+  QuizStartScreen(this.handleStartFunc, {super.key});
 
-  @override
-  State<QuizStartScreen> createState() {
-    return _QuizStartScreen();
-  }
-}
-
-class _QuizStartScreen extends State<QuizStartScreen> {
-  void onPressed() {
-    setState(() {
-      print("clicked");
-    });
-  }
+  final void Function() handleStartFunc;
 
   @override
   Widget build(context) {
@@ -42,7 +31,7 @@ class _QuizStartScreen extends State<QuizStartScreen> {
           ),
           SizedBox(height: 20),
           OutlinedButton.icon(
-            onPressed: onPressed,
+            onPressed: handleStartFunc,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
               iconSize: 18,

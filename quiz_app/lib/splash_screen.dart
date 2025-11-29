@@ -1,48 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/questions_screen.dart';
+import 'package:quiz_app/quiz.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class SplashScreen extends StatefulWidget {
+  SplashScreen({super.key});
 
-  void onPressed() {
-    print("clicked");
+  @override
+  State<SplashScreen> createState() {
+    return _SplashScreen();
+  }
+}
+
+class _SplashScreen extends State<SplashScreen> {
+  Widget? outputScreen;
+
+  // After object has been created then initState method runs before the build method runs
+  // When setState is called it triggers to buildMethos so  setState method is not used in initState method
+
+  @override
+  void initState() {
+    super.initState();
+    outputScreen = QuizStartScreen(handleSwitchScreenFunc);
+  }
+
+  void handleSwitchScreenFunc() {
+    setState(() {
+      outputScreen = QuestionsScreen();
+    });
   }
 
   @override
   Widget build(context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // Opacity(
-          //   opacity: 0.5,
-          //   child: Image.asset(
-          //     "assets/images/quiz-logo.png",
-          //     width: 300,
-          //     color: Colors.amber,
-          //   ),
-          // ),
-          Image.asset(
-            "assets/images/quiz-logo.png",
-            width: 300,
-            color: const Color.fromARGB(120, 255, 255, 255),
-          ),
-          SizedBox(height: 24),
-          Text(
-            "Learn Flutter the fun way!",
-            style: TextStyle(color: Colors.white, fontSize: 18),
-          ),
-          SizedBox(height: 20),
-          OutlinedButton.icon(
-            onPressed: onPressed,
-            style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.white,
-              iconSize: 18,
-            ),
-            icon: Icon(Icons.arrow_right_alt),
-            label: Text("Start Quiz"),
-          ),
-        ],
-      ),
-    );
+    return outputScreen ?? const SizedBox.shrink();
   }
 }
