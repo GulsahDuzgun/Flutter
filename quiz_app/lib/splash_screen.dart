@@ -12,25 +12,18 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreen extends State<SplashScreen> {
-  Widget? outputScreen;
-
-  // After object has been created then initState method runs before the build method runs
-  // When setState is called it triggers to buildMethos so  setState method is not used in initState method
-
-  @override
-  void initState() {
-    super.initState();
-    outputScreen = QuizStartScreen(handleSwitchScreenFunc);
-  }
+  var outputScreen = "start-screen";
 
   void handleSwitchScreenFunc() {
     setState(() {
-      outputScreen = QuestionsScreen();
+      outputScreen = "questions-screen";
     });
   }
 
   @override
   Widget build(context) {
-    return outputScreen ?? const SizedBox.shrink();
+    return outputScreen == "start-screen"
+        ? QuizStartScreen(handleSwitchScreenFunc)
+        : QuestionsScreen();
   }
 }
