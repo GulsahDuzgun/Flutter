@@ -22,8 +22,11 @@ class _SplashScreen extends State<SplashScreen> {
 
   @override
   Widget build(context) {
-    return outputScreen == "start-screen"
-        ? QuizStartScreen(handleSwitchScreenFunc)
-        : QuestionsScreen();
+    Widget outputScreenWidget = QuizStartScreen(handleSwitchScreenFunc);
+
+    if (outputScreen == "questions-screen") {
+      outputScreenWidget = QuestionsScreen();
+    }
+    return outputScreenWidget;
   }
 }
