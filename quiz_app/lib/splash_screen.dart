@@ -3,7 +3,7 @@ import 'package:quiz_app/questions_screen.dart';
 import 'package:quiz_app/quiz.dart';
 
 class SplashScreen extends StatefulWidget {
-  SplashScreen({super.key});
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() {

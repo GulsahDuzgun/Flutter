@@ -8,6 +8,7 @@ void main() {
     MaterialApp(
       home: Scaffold(
         body: Container(
+          padding: EdgeInsets.all(40),
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
