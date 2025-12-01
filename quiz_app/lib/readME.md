@@ -16,3 +16,5 @@ There are three extremly important stateful widget lifecycle methods.
 - Named argument are optional, to make named arguments not optional we should add required keyword in front of that argument, When call the function with named argument place of the argument is not important we already define the argument's name
 
 - Suffle method for list make changes on original list so we should take copy before user it.
+
+- setState triggers build
