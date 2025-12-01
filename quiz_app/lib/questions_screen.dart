@@ -29,7 +29,7 @@ class _QuestionsScreen extends State<QuestionsScreen> {
             style: TextStyle(color: Colors.white),
           ),
           const SizedBox(height: 30),
-          ...question1.answers.map((answer) {
+          ...question1.getSuffledAnswerList().map((answer) {
             return CustomAnswerBtn(btnText: answer, onTap: () {});
           }),
         ],
