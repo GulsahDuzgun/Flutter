@@ -13,6 +13,11 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreen extends State<SplashScreen> {
   var outputScreen = "start-screen";
+  final List<String> selectedAnswer = [];
+
+  void saveAnswer(String answer) {
+    selectedAnswer.add(answer);
+  }
 
   void handleSwitchScreenFunc() {
     setState(() {
@@ -25,7 +30,7 @@ class _SplashScreen extends State<SplashScreen> {
     Widget outputScreenWidget = QuizStartScreen(handleSwitchScreenFunc);
 
     if (outputScreen == "questions-screen") {
-      outputScreenWidget = QuestionsScreen();
+      outputScreenWidget = QuestionsScreen(onSelectAnswer: saveAnswer);
     }
     return outputScreenWidget;
   }

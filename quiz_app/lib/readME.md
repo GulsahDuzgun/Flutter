@@ -17,4 +17,5 @@ There are three extremly important stateful widget lifecycle methods.
 
 - Suffle method for list make changes on original list so we should take copy before user it.
 
-- setState triggers build
+- setState triggers build function
+- final complaints if you try toassign a new value to an existing variable. Sont complain about adding new values to array or objects. If you try to assign this array or object anıther value it gives err but you can edit this values if they object or array because of they are address type
