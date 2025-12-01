@@ -20,7 +20,7 @@ class CustomAnswerBtn extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       ),
-      child: Text(btnText),
+      child: Text(btnText, textAlign: TextAlign.center),
     );
   }
 }

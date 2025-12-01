@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:quiz_app/custom_answer_btn.dart';
 import 'package:quiz_app/data/questions.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen({super.key});
@@ -34,7 +35,7 @@ class _QuestionsScreen extends State<QuestionsScreen> {
           Text(
             question.questionText,
             textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white),
+            style: GoogleFonts.lato(fontSize: 24, color: Colors.white),
           ),
           const SizedBox(height: 30),
           ...question.getSuffledAnswerList().map((answer) {
