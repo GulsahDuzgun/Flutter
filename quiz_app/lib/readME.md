@@ -19,3 +19,7 @@ There are three extremly important stateful widget lifecycle methods.
 
 - setState triggers build function
 - final complaints if you try toassign a new value to an existing variable. Sont complain about adding new values to array or objects. If you try to assign this array or object anıther value it gives err but you can edit this values if they object or array because of they are address type
+
+* Maps are collections of key/ value pairs .The keys and values can be any type of values.
+* Maps get created by {} in dart
+  -final value tekrar assign edilmez and final fields must be initialized when declared in constructor or via initializer lists And loops can not run at class level in dart

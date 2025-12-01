@@ -43,7 +43,7 @@ class _SplashScreen extends State<SplashScreen> {
     }
 
     if (outputScreen == "result-screen") {
-      outputScreenWidget = ResultScreen();
+      outputScreenWidget = ResultScreen(chosenAnswerList: selectedAnswer);
     }
     return outputScreenWidget;
   }
