@@ -23,7 +23,6 @@ class _SplashScreen extends State<SplashScreen> {
     if (selectedAnswer.length == questions.length) {
       setState(() {
         outputScreen = "result-screen";
-        selectedAnswer = [];
       });
     }
   }
@@ -31,6 +30,13 @@ class _SplashScreen extends State<SplashScreen> {
   void handleSwitchScreenFunc() {
     setState(() {
       outputScreen = "questions-screen";
+    });
+  }
+
+  void handleReset() {
+    setState(() {
+      outputScreen = "start-screen";
+      selectedAnswer = [];
     });
   }
 
@@ -43,7 +49,10 @@ class _SplashScreen extends State<SplashScreen> {
     }
 
     if (outputScreen == "result-screen") {
-      outputScreenWidget = ResultScreen(chosenAnswerList: selectedAnswer);
+      outputScreenWidget = ResultScreen(
+        chosenAnswerList: selectedAnswer,
+        onReset: handleReset,
+      );
     }
     return outputScreenWidget;
   }
