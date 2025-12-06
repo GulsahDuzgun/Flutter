@@ -1,0 +1,2 @@
+- In Dart "Initializer Lists" can be used to initialize class properties(like id) with values that are not received as constructorfunction arguments
+- Enum allows us to create custom type which simply is a combination of predefined allowed values.This alloed values defines in {} and list enum values. Dart recognizes this enums and treats these values kind od like string
