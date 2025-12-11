@@ -9,24 +9,27 @@ class ExpenseItem extends StatelessWidget {
   @override
   Widget build(cntx) {
     return Card(
-      child: Column(
-        children: [
-          Row(children: [Text(expenseItem.title)]),
-          const SizedBox(height: 4),
-          Row(
-            children: [
-              Text('\$ ${expenseItem.amount.toStringAsFixed(2)}'),
-              const Spacer(),
-              Row(
-                children: [
-                  Icon(categoryIcons[expenseItem.category]),
-                  const SizedBox(width: 8),
-                  Text(expenseItem.formattedDate),
-                ],
-              ),
-            ],
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        child: Column(
+          children: [
+            Text(expenseItem.title),
+            const SizedBox(height: 4),
+            Row(
+              children: [
+                Text('\$ ${expenseItem.amount.toStringAsFixed(2)}'),
+                const Spacer(),
+                Row(
+                  children: [
+                    Icon(categoryIcons[expenseItem.category]),
+                    const SizedBox(width: 8),
+                    Text(expenseItem.formattedDate),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

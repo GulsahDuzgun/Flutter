@@ -30,6 +30,9 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],
+      ),
       body: Column(
         children: [
           Expanded(child: ExpensesList(expenseList: _registeredExpenses)),
