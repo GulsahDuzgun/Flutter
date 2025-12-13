@@ -6,3 +6,5 @@
 -If we dont know the list items lenght on Flutter dont use Column Widget, use ListView Widget. Because Column tries to get all data at once but the ListView Widget gets a scrollable list which still creates all items immediately when this list is diplayed on the scree.The builder constructor with ListView Widget tells Flutter to create scrollable Widget but create those items only if they are visible or about to become visible
 
 - Getters are basically computed properties.. Properties that are dynamically derived based on other class properties
+
+* Context: Context object is same kind of metadata collection. An object full of metadata managed by Flutter. That belongs to pasific Widget, every widget has its own context object and it contains metadata information related to the widget and the widget position in the overall UI
