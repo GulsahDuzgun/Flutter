@@ -8,3 +8,7 @@
 - Getters are basically computed properties.. Properties that are dynamically derived based on other class properties
 
 * Context: Context object is same kind of metadata collection. An object full of metadata managed by Flutter. That belongs to pasific Widget, every widget has its own context object and it contains metadata information related to the widget and the widget position in the overall UI
+
+-"dispose" like initState and "build" is part of a StatefullWidget's lifecycle . It is called automatically by Flutter when the widget & its state are about to be destroyed.
+
+-Only state classes can implement "dispose" -elden çıkarmak- method, StatelessWidget can't.
