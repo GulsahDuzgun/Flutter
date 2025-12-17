@@ -50,7 +50,10 @@ class _NewExpense extends State<NewExpense> {
                 },
                 child: Text("click"),
               ),
-              ElevatedButton(onPressed: () {}, child: Text("Cancel")),
+              ElevatedButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text("Cancel"),
+              ),
             ],
           ),
         ],
