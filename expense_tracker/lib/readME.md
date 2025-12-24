@@ -12,3 +12,5 @@
 -"dispose" like initState and "build" is part of a StatefullWidget's lifecycle . It is called automatically by Flutter when the widget & its state are about to be destroyed.
 
 -Only state classes can implement "dispose" -elden çıkarmak- method, StatelessWidget can't.
+
+-On state class we can access with widget object to StatefullWidget class' fields and functions

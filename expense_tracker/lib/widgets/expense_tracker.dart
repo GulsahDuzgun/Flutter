@@ -28,8 +28,17 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
     ),
   ];
 
+  void _addNewExpense(Expense newExpense) {
+    setState(() {
+      _registeredExpenses.add(newExpense);
+    });
+  }
+
   void _openAddExpensOeverlay() {
-    showModalBottomSheet(context: context, builder: (ctx) => NewExpense());
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => NewExpense(onAddExpense: _addNewExpense),
+    );
   }
 
   @override
