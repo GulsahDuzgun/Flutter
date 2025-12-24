@@ -42,6 +42,12 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
     );
   }
 
+  void _removeExpenseItem(Expense removedExpense) {
+    setState(() {
+      _registeredExpenses.remove(removedExpense);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +61,12 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
       ),
       body: Column(
         children: [
-          Expanded(child: ExpensesList(expenseList: _registeredExpenses)),
+          Expanded(
+            child: ExpensesList(
+              expenseList: _registeredExpenses,
+              onRemoveExpense: _removeExpenseItem,
+            ),
+          ),
         ],
       ),
     );
