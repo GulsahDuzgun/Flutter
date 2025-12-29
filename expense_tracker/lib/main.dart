@@ -14,6 +14,7 @@ void main() {
   runApp(
     MaterialApp(
       darkTheme: ThemeData.dark().copyWith(
+        colorScheme: kDarkThemeScheme,
         cardTheme: const CardThemeData().copyWith(
           color: kDarkThemeScheme.secondaryContainer,
           margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
