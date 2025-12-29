@@ -50,6 +50,17 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
 
   @override
   Widget build(BuildContext context) {
+    Widget mainContent = const Center(
+      child: Text("No expenses found. Starting add some"),
+    );
+
+    if (_registeredExpenses.isNotEmpty) {
+      mainContent = ExpensesList(
+        expenseList: _registeredExpenses,
+        onRemoveExpense: _removeExpenseItem,
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -59,16 +70,7 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ExpensesList(
-              expenseList: _registeredExpenses,
-              onRemoveExpense: _removeExpenseItem,
-            ),
-          ),
-        ],
-      ),
+      body: Column(children: [Expanded(child: mainContent)]),
     );
   }
 }
