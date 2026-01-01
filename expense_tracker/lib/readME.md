@@ -14,3 +14,5 @@
 -Only state classes can implement "dispose" -elden çıkarmak- method, StatelessWidget can't.
 
 -On state class we can access with widget object to StatefullWidget class' fields and functions
+
+- Expanded constraints the child to only yake as musch width as available ib the row afteer sizing the other Row children
