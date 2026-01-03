@@ -72,3 +72,5 @@ Reuses most Elements (they match the previous widgets)
 Creates a new Element for the conditional "Awesome!" text
 Updates the Render Tree to show the new text
 Avoids recreating the entire UI
+
+- In List all items are same type widgets. Without keys Flutter matches widgets by their position in the list not by their identity. Without keys Flutter just change elemts references, configs. But with key it moves the widget and identify it.
