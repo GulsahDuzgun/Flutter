@@ -74,3 +74,8 @@ Updates the Render Tree to show the new text
 Avoids recreating the entire UI
 
 - In List all items are same type widgets. Without keys Flutter matches widgets by their position in the list not by their identity. Without keys Flutter just change elemts references, configs. But with key it moves the widget and identify it.
+
+- final variables can create once. Change on this final variable can be done but it cant assing a new value, object in memory
+
+- otherwise var type variables can be assigned to new variable.
+- const dont allow to edit the variable behind the scenes. So the array, object type variables cant be add, remove, etc. with const type. Const cant be manipulated. That's why we are able to use const with widget
